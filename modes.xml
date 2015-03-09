@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+	
+  <mode name="mkd-hbs_BS" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mkd-hbs.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-hbs.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.mkd-hbs.t1x"/>
+        <file name="mkd-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t2x"/>
+        <file name="mkd-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t3x"/>
+        <file name="mkd-hbs.t3x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="mkd-hbs_BS.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="mkd-hbs.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-hbs_HR" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mkd-hbs.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-hbs.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.mkd-hbs.t1x"/>
+        <file name="mkd-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t2x"/>
+        <file name="mkd-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t3x"/>
+        <file name="mkd-hbs.t3x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="mkd-hbs_HR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="mkd-hbs.autopgen.bin"/>
+      </program>
+      <program name="lt-proc -t">
+        <file name="mkd-hbs.translit.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-hbs_SR" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mkd-hbs.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-hbs.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.mkd-hbs.t1x"/>
+        <file name="mkd-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t2x"/>
+        <file name="mkd-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.mkd-hbs.t3x"/>
+        <file name="mkd-hbs.t3x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="mkd-hbs_SR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="mkd-hbs.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-hbs-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-hbs.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="mkd-hbs.rlx.bin"/>
+      </program>
+<!--
+      <program name="cg-proc -w">
+        <file name="mkd-hbs.lex.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-hbs.prob"/>
+      </program> 
+    </pipeline>
+  </mode>
+
+  <!-- Serbo-Croatian → Macedonian -->
+
+  <mode name="hbs-mkd" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <!--program name="apertium-tagger -g $2">
+        <file name="hbs-mkd.prob"/>
+      </program--> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t2x"/>
+        <file name="hbs-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t3x"/>
+        <file name="hbs-mkd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="hbs-mkd.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs-mkd.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-pretransfer" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <!--program name="apertium-tagger -g $2">
+        <file name="hbs-mkd.prob"/>
+      </program--> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-multi" install="no">
+    <pipeline>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t2x"/>
+        <file name="hbs-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t3x"/>
+        <file name="hbs-mkd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="hbs-mkd.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs-mkd.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="hbs-mkd-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hbs-mkd.prob"/>
+      </program> 
+    </pipeline>
+  </mode>
+
+  
+
+  <mode name="hbs-mkd-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hbs-mkd.prob"/>
+      </program> 
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hbs-mkd.prob"/>
+      </program> 
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-chunker" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="hbs-mkd-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t2x"/>
+        <file name="hbs-mkd.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="hbs-mkd-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t2x"/>
+        <file name="hbs-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t3x"/>
+        <file name="hbs-mkd.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-mkd-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="hbs-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hbs-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs-mkd.hbs-mkd.t1x"/>
+        <file name="hbs-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t2x"/>
+        <file name="hbs-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hbs-mkd.hbs-mkd.t3x"/>
+        <file name="hbs-mkd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="hbs-mkd.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

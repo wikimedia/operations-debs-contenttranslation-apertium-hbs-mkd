@@ -1,0 +1,7 @@
+<rules>
+  <rule>
+    <match lemma="дестинација" tags="n.*"><select lemma="destinacija" tags="n.*"/></match>
+  </rule>
+	
+</rules>
+
