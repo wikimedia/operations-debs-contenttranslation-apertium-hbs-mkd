@@ -1,0 +1,34 @@
+Source: apertium-hbs-mkd
+Section: science
+Priority: optional
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Tino Didriksen <mail@tinodidriksen.com>,
+           Kartik Mistry <kartik@debian.org>
+Build-Depends: apertium,
+               apertium-lex-tools,
+               autotools-dev,
+               cg3,
+               debhelper (>= 8.0),
+               dh-autoreconf,
+               gawk,
+               libapertium3-3.3-dev,
+               locales,
+               lttoolbox,
+               pkg-config (>= 0.21)
+Standards-Version: 3.9.6
+Homepage: http://apertium.org/
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/apertium-hbs-mkd.git
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/apertium-hbs-mkd.git
+
+Package: apertium-hbs-mkd
+Architecture: all
+Depends: apertium (>= 3.3),
+         apertium-lex-tools,
+         cg3,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Provides: apertium-mkd-hbs
+Conflicts: apertium-mkd-hbs
+Description: Apertium translation data for the Serbo-Croatian-Macedonian pair
+ Data package providing Apertium language resources for translating
+ between the Serbo-Croatian and Macedonian languages.
