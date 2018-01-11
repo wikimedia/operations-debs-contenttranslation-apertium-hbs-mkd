@@ -1,3 +1,10 @@
+apertium-hbs-mkd (0.1.0~r76450-1+wmf1) jessie-wikimedia; urgency=low
+
+  * New upstream snapshot to fix FTBFS.
+  * Depends on cg3 (>= 1.0.0~r12254)
+
+ -- Kartik Mistry <kartik@debian.org>  Thu, 11 Jan 2018 17:25:14 +0530
+
 apertium-hbs-mkd (0.1.0~r57554-1+wmf1) jessie-wikimedia; urgency=low
 
   * Rebuild for Jessie.
